@@ -2,6 +2,7 @@ package com.minorjava.week3.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -10,7 +11,9 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotBlank
     private String FirstName;
+    @NotBlank
     private String LastName;
     @JsonManagedReference
     @OneToMany(mappedBy= "person", cascade = CascadeType.ALL)

@@ -1,7 +1,11 @@
 package com.minorjava.week3.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -10,8 +14,11 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "IBAN is mandatory")
     private String iban;
+    @NotNull
     private int balance;
+    @Value("#{aBean.status ?: active}")
     private String status;
 
     @JsonBackReference
