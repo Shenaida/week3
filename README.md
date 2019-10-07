@@ -1,4 +1,4 @@
-# week3
+# week4
 minor java
-opdracht 3 5 en 7 nog niet gelukt. 
-ook pull request niet gelukt. sorry
+
+Ik heb deze week niks af gekregen. Ik liep nog achter van vorige week. Tips hoe jij het aangepakt hebt in de feedback zou mij helpen.

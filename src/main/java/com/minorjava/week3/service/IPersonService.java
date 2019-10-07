@@ -9,5 +9,5 @@ public interface IPersonService {
     Iterable<Person> findAll(Pageable pageable);
     Person save(Person account);
     void delete(Integer id);
-    Optional<Person> findById(Integer id);
+    Optional<Person> findById(Long id);
 }
