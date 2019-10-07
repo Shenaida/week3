@@ -19,11 +19,16 @@ import java.util.stream.Collectors;
 @RestController
 public class AccountController {
 
+
+    private IAccountService accountService;
+
     @Autowired
-    IAccountService accountService;
+    public AccountController(IAccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @PostMapping("/account")
-    ResponseEntity<Account> create(@Valid @RequestBody Account account) throws ValidationException {
+    public ResponseEntity create(@Valid @RequestBody Account account) throws ValidationException {
         {
             return new ResponseEntity(accountService.save(account), HttpStatus.OK);
         }
@@ -37,12 +42,12 @@ public class AccountController {
     }
 
      @GetMapping("/account")
-    Iterable<Account> read() {
+    public Iterable<Account> read() {
         return accountService.findAll();
     }
 
     @PutMapping("/account")
-    ResponseEntity<Account> update(@RequestBody Account account){
+    public ResponseEntity<Account> update(@RequestBody Account account){
         if(accountService.findById(account.getId()).isPresent()){
             return new ResponseEntity(accountService.save(account), HttpStatus.OK);
         } else {
@@ -51,7 +56,7 @@ public class AccountController {
     }
 
     @DeleteMapping("/account/{id}")
-    void delete(@PathVariable Integer id) throws ValidationException {
+    public void delete(@PathVariable Integer id) throws ValidationException {
         if(accountService.findById(id).isPresent()){
             accountService.delete(id);
         } else {
@@ -59,7 +64,7 @@ public class AccountController {
         }
     }
     @GetMapping("/account/{id}")
-    Optional<Account> findById(@PathVariable Integer id){
+    public Optional<Account> findById(@PathVariable Integer id){
         return accountService.findById(id);
     }
 }

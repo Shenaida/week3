@@ -34,6 +34,12 @@ public class Account {
         this.balance = balance;
         this.status = status;
     }
+    public Account( String iban, int balance, String status) {
+
+        this.iban = iban;
+        this.balance = balance;
+        this.status = status;
+    }
 
     public int getId() {
         return id;
