@@ -25,12 +25,12 @@ public class AccountService implements IAccountService{
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         accountRepository.deleteById(id);
     }
 
     @Override
-    public Optional<Account> findById(Integer id) {
+    public Optional<Account> findById(Long id) {
         return accountRepository.findById(id);
     }
 

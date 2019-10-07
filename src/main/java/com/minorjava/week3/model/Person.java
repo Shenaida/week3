@@ -7,10 +7,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "persons")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     @NotBlank
     private String FirstName;
     @NotBlank
@@ -23,17 +24,17 @@ public class Person {
     public Person() {
     }
 
-    public Person(int id, String firstName, String lastName) {
+    public Person(Long id, String firstName, String lastName) {
         this.id = id;
         FirstName = firstName;
         LastName = lastName;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

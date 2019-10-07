@@ -6,6 +6,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IPersonRepository extends CrudRepository<Person, Integer>, PagingAndSortingRepository<Person, Integer> {
+public interface IPersonRepository extends CrudRepository<Person, Long>, PagingAndSortingRepository<Person, Long> {
 
 }

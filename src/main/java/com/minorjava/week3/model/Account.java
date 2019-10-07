@@ -13,7 +13,7 @@ import java.util.List;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @NotBlank(message = "IBAN is mandatory")
     private String iban;
     @NotNull
@@ -28,7 +28,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(int id, String iban, int balance, String status) {
+    public Account(Long id, String iban, int balance, String status) {
         this.id = id;
         this.iban = iban;
         this.balance = balance;
@@ -41,11 +41,11 @@ public class Account {
         this.status = status;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

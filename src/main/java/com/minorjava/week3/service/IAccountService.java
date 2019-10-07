@@ -7,6 +7,6 @@ import java.util.Optional;
 public interface IAccountService {
     Iterable<Account> findAll();
     Account save(Account account);
-    void delete(Integer id);
-    Optional<Account> findById(Integer id);
+    void delete(Long id);
+    Optional<Account> findById(Long id);
 }
